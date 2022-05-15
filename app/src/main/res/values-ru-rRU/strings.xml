@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">НМедиа</string>
+    <string name="hello">НМедиа!</string>
+    <string name="textAvatar">Аватар</string>
+    <string name="textMore">Еще</string>
+    <string name="textPicture">Картинка</string>
+    <string name="textFavorite">Понравилось</string>
+    <string name="textShare">Поделились</string>
+    <string name="textVisibility">Посмотрело</string>
+    <string name="textRemove">Удалить</string>
+    <string name="textEdit">Редактировать</string>
+    <string name="textAdd">Добавить</string>
+    <string name="textNewPost">Текст нового поста</string>
+</resources>

@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/list_of_posts"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginBottom="@dimen/sizeMargin"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toTopOf="@id/barrier_on_add_items"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        tools:listitem="@layout/card_post" />
+
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/barrier_on_add_items"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:barrierDirection="top"
+        app:constraint_referenced_ids="button_cancel_edit" />
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/group_cancel_edit_post"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="visible"
+        app:constraint_referenced_ids="button_cancel_edit, image_edit_post, textViewAuthorName, textViewAuthorDate" />
+
+    <ImageButton
+        android:id="@+id/button_cancel_edit"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/sizeAvatar"
+        app:srcCompat="@drawable/ic_baseline_cancel_24"
+        app:layout_constraintEnd_toEndOf="@id/button_new_post"
+        app:layout_constraintStart_toStartOf="@id/button_new_post"
+        app:layout_constraintBottom_toTopOf="@id/button_new_post"
+        android:contentDescription="@string/textAdd" />
+
+    <ImageView
+        android:id="@+id/image_edit_post"
+        android:layout_width="@dimen/sizeAvatar"
+        android:layout_height="@dimen/sizeAvatar"
+        app:srcCompat="@drawable/ic_baseline_edit_24"
+        app:layout_constraintTop_toBottomOf="@id/barrier_on_add_items"
+        app:layout_constraintStart_toStartOf="@id/text_new_post"
+        android:contentDescription="@string/textAvatar" />
+
+    <TextView
+        android:id="@+id/textViewAuthorName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/sizeMargin"
+        android:singleLine="true"
+        android:ellipsize="end"
+        android:textColor="@color/blue"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@id/textViewAuthorDate"
+        app:layout_constraintTop_toBottomOf="@id/barrier_on_add_items"
+        app:layout_constraintStart_toEndOf="@id/image_edit_post"
+        app:layout_constraintEnd_toEndOf="@id/text_new_post"
+        tools:text="@sample/posts.json/data/author" />
+
+    <TextView
+        android:id="@+id/textViewAuthorDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/sizeMargin"
+        app:layout_constraintTop_toBottomOf="@id/textViewAuthorName"
+        app:layout_constraintBottom_toTopOf="@id/text_new_post"
+        app:layout_constraintStart_toEndOf="@id/image_edit_post"
+        tools:text="@sample/posts.json/data/date" />
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/group_new_post"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="visible"
+        app:constraint_referenced_ids="text_new_post,button_new_post" />
+
+    <EditText
+        android:id="@+id/text_new_post"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/sizeAvatar"
+        app:layout_constraintEnd_toStartOf="@id/button_new_post"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginStart="@dimen/sizeMargin"
+        android:layout_marginEnd="@dimen/sizeMargin"
+        android:inputType="textMultiLine"
+        android:importantForAutofill="no"
+        android:background="@drawable/shape_on_edit_text"
+        android:hint="@string/textNewPost"
+        android:paddingLeft="@dimen/sizeMediumMargin"
+        android:paddingRight="@dimen/sizeMediumMargin"
+        android:paddingTop="@dimen/sizeMediumMargin"
+        android:paddingBottom="@dimen/sizeMediumMargin"
+        />
+
+    <ImageButton
+        android:id="@+id/button_new_post"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/sizeAvatar"
+        app:srcCompat="@drawable/ic_baseline_check_circle_24"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/text_new_post"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:contentDescription="@string/textAdd" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

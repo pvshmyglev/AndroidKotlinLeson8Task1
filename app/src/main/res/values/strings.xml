@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">NMedia</string>
+    <string name="hello">NMedia!</string>
+    <string name="textAvatar">Avatar</string>
+    <string name="textMore">More</string>
+    <string name="textPicture">Picture</string>
+    <string name="textFavorite">Favorite</string>
+    <string name="textShare">Share</string>
+    <string name="textVisibility">Visibility</string>
+    <string name="textRemove">Remove</string>
+    <string name="textEdit">Edit</string>
+    <string name="textAdd" translatable="false">Add</string>
+    <string name="textNewPost">Text for new post</string>
+</resources>
